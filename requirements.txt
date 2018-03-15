@@ -8,3 +8,4 @@ networkx
 matplotlib
 scipy
 lxml
+html5lib
