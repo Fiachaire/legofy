@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser
 import os
 import shutil
+from datetime import datetime
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -30,7 +31,7 @@ def get_colours():
     rgb_table = pd.DataFrame([hextoint(td.attrs["bgcolor"]) for td in html_table.select("td[bgcolor]")], 
                              columns=["r", "g", "b"])
     colour_table = colour_table.merge(rgb_table, left_index=True, right_index=True)
-    current_colours = colour_table[colour_table["Color Timeline"].str.contains("2017")]
+    current_colours = colour_table[colour_table["Color Timeline"].str.contains(str(datetime.now().year))]
     current_colours = current_colours[~(current_colours["Name"].str.contains("Flesh") 
                                         | current_colours["Name"].str.contains("Dark Pink")
                                         | (current_colours["Name"] == "Lavender")
