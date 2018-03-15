@@ -13,6 +13,10 @@ The `legofy.py` script can be executed via
 ```bash
 python3 legofy.py [options]
 ```
+or, in some cases, particularly on Windows:
+```bash
+python legofy.py [options]
+```
 
 The options should be printed if you call `python3 legofy.py -h`
 
